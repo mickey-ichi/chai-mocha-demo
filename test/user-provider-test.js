@@ -44,16 +44,6 @@ describe('User Provider service', function () {
         mongodb.close();
     });
 
-    describe('all', function () {
-        it('should have 3 users', function (done) {
-            mongodb.collection('users').find({}).toArray(function (error, docs) {
-                expect(error).to.be.null;
-                expect(docs.length).to.equal(3);
-                done();
-            })
-        })
-    });
-
     describe('find by username', function () {
         it('should 1 user', function (done) {
             var userProvider = new UserProvider(mongodb.collection("users"));
