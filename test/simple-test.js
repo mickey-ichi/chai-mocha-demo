@@ -1,7 +1,7 @@
 var describe = require('mocha').describe;
 var it       = require('mocha').it;
 var expect   = require('chai').expect;
-var Auth     = require('./../src/auth');
+var Auth     = require('./../src/auth').Auth;
 
 describe('Auth service', function () {
     describe('do authenticate by password', function () {
