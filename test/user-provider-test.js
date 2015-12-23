@@ -35,7 +35,7 @@ describe('User Provider service', function () {
                     return done(err);
                 }
                 mongodb = db;
-                db.collection('users').insert(userStubs, done);
+                db.collection('users').insertMany(userStubs, done);
             });
         });
     });
