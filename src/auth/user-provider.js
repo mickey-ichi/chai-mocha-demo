@@ -5,10 +5,9 @@ var UserProvider = function (userCollection) {
 };
 
 UserProvider.prototype.findByUsername = function (username) {
-    return Promise.promisify(
-        this.userCollection.findOne,
-        {context: this.userCollection}
-    )({username: username});
+    var findQuery = this.userCollection.find({ username: username }).limit(1);
+
+    return Promise.promisify(findQuery.next, { context: findQuery })();
 };
 
 module.exports = UserProvider;
